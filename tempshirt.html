@@ -1,0 +1,113 @@
+<!-- MAIN CONTENT -->
+<main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's Shirts</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">The perfect shirt to elevate your style. Choose your size and get more details!</p>
+    </section>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <!-- Shirt 1 -->
+      <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+        <img src="images/copilottest.png" alt="Shirt 1" class="mx-auto w-[250px] rounded-lg mb-2">
+        <h3 class="text-xl font-semibold uppercase">The Classic White Shirt</h3>
+        <div class="mt-3 space-y-2">
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+
+          <div class="relative">
+            <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+            <div id="sizeDropdown1" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn1', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details1" class="details mt-2 text-sm hidden">
+          A timeless white shirt, perfect for any occasion. Breathable cotton. Machine washable. Available in sizes XS to XXL.
+        </div>
+      </div>
+
+      <!-- Shirt 2 -->
+      <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+        <img src="images/redshirt.png" alt="Shirt 2" class="mx-auto w-[250px] rounded-lg mb-2">
+        <h3 class="text-xl font-semibold uppercase">The Bold Red Shirt</h3>
+        <div class="mt-3 space-y-2">
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+
+          <div class="relative">
+            <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+            <div id="sizeDropdown2" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn2', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details2" class="details mt-2 text-sm hidden">
+          A statement red shirt made of a soft cotton blend. Slim fit. Sizes XS to XXL.
+        </div>
+      </div>
+
+      <!-- Shirt 3 -->
+      <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+        <img src="images/blueshirt.webp" alt="Shirt 3" class="mx-auto w-[250px] rounded-lg mb-2">
+        <h3 class="text-xl font-semibold uppercase">The Casual Blue Shirt</h3>
+        <div class="mt-3 space-y-2">
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+
+          <div class="relative">
+            <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+            <div id="sizeDropdown3" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn3', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details3" class="details mt-2 text-sm hidden">
+          Made of 100% cotton. Great for relaxed weekends. Sizes XS to XXL.
+        </div>
+      </div>
+
+      <!-- Shirt 4 -->
+      <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+        <img src="images/greenshirt.jpg" alt="Shirt 4" class="mx-auto w-[250px] rounded-lg mb-2">
+        <h3 class="text-xl font-semibold uppercase">The Green Checkered Shirt</h3>
+        <div class="mt-3 space-y-2">
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+
+          <div class="relative">
+            <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+            <div id="sizeDropdown4" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn4', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details4" class="details mt-2 text-sm hidden">
+          A laid-back checkered shirt in rich green. Classic pattern. Cotton blend. Sizes XS to XXL.
+        </div>
+      </div>
+    </section>
+  </main>

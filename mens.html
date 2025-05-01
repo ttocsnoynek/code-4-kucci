@@ -52,8 +52,8 @@
       <button class="bg-[#C64191] text-white w-full py-3 rounded-2xl font-semibold" onclick="toggleDropdown('apparel')">Apparel</button>
       <div id="dropdown-apparel" class="space-y-2 hidden mt-2">
         <a href="javascript:void(0)" class="block bg-gray-100 p-4 rounded-2xl shadow text-center" onclick="showProduct('hat')">HAT</a>
-        <a href="mens_shirt.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">SHIRT</a>
-        <a href="mens_hoodie.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">HOODIE</a>
+        <a href="javascript:void(0)" class="block bg-gray-100 p-4 rounded-2xl shadow text-center" onclick="showShirtProduct('shirt')">SHIRT</a>
+        <a href="javascript:void(0)" class="block bg-gray-100 p-4 rounded-2xl shadow text-center" onclick="showHoodieProduct('hoodie')">HOODIE</a>
         <a href="mens_underwear.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">UNDERWEAR</a>
         <a href="mens_pants.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">PANTS</a>
         <a href="mens_short.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">SHORT</a>
@@ -112,63 +112,400 @@
       let content = '';
       if (product === 'hat') {
         content = `
-        <!-- MAIN CONTENT -->
-        <main class="main-content pt-28">
+        <main class="pt-28 p-6 space-y-12">
           <section>
-            <h2 class="text-4xl font-bold uppercase text-center" id="hats">Men's Hats</h2>
+            <h2 class="text-4xl font-bold uppercase text-center">Men's Hats</h2>
             <p class="mt-4 text-xl text-center text-[#474747]">Explore our collection of stylish hats to complete your look. Choose your style and size!</p>
           </section>
 
-          <!-- Hats Section Grid -->
-          <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Hat 1 -->
-            <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 shadow-md">
-              <img src="images/blackbeanie.webp" alt="The Classic Black Beanie" class="w-64 h-64 object-cover rounded-lg mb-4">
-              <h3 class="text-2xl font-semibold uppercase">The Classic Black Beanie</h3>
-              <p class="mt-2 text-lg">A must-have for colder days. This sleek black beanie offers warmth with a minimalist design.</p>
-              <div class="flex flex-col items-center space-y-4 mt-4">
-                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+          <section class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Hat Template -->
+            <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+              <img src="images/blackbeanie.webp" alt="Hat 1" class="mx-auto w-[250px] rounded-lg mb-2">
+              <h3 class="text-xl font-semibold uppercase">The Classic Black Beanie</h3>
+              <div class="mt-3 space-y-2">
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+
                 <div class="relative">
-                  <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+                  <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
                   <div id="sizeDropdown1" class="size-dropdown">
                     <a href="#" onclick="selectSize('sizeBtn1', 'One Size')">One Size</a>
                   </div>
                 </div>
-                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
               </div>
-              <div id="details1" class="details">
-                <p class="text-sm">A stylish beanie made from a wool blend, perfect for keeping you warm and fashionable. One size fits most.</p>
+              <div id="details1" class="details mt-2 text-sm hidden">
+                A stylish beanie made from a wool blend, perfect for keeping you warm and fashionable. One size fits most.
               </div>
             </div>
 
             <!-- Hat 2 -->
-            <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 shadow-md">
-              <img src="images/kuccicap.png" alt="The Trendy Snapback" class="w-64 h-64 object-cover rounded-lg mb-4">
-              <h3 class="text-2xl font-semibold uppercase">The Trendy Snapback</h3>
-              <p class="mt-2 text-lg">A bold snapback with a modern edge, perfect for those who want to stand out.</p>
-              <div class="flex flex-col items-center space-y-4 mt-4">
-                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+            <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+              <img src="images/kuccicap.png" alt="Hat 2" class="mx-auto w-[250px] rounded-lg mb-2">
+              <h3 class="text-xl font-semibold uppercase">The Trendy Snapback</h3>
+              <div class="mt-3 space-y-2">
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+
                 <div class="relative">
-                  <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+                  <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
                   <div id="sizeDropdown2" class="size-dropdown">
-                    <a href="#" onclick="selectSize('sizeBtn2', 'Adjustable')">Adjustable</a>
+                    <a href="#" onclick="selectSize('sizeBtn2', 'One Size')">One Size</a>
                   </div>
                 </div>
-                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
               </div>
-              <div id="details2" class="details">
-                <p class="text-sm">This snapback offers a stylish, adjustable fit, making it a versatile addition to your wardrobe.</p>
+              <div id="details2" class="details mt-2 text-sm hidden">
+                A high-quality snapback with adjustable fit. Features a bold logo design for extra flair.
+              </div>
+            </div>
+
+            <!-- Hat 3 -->
+            <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+              <img src="images/fedora.jpg" alt="Hat 3" class="mx-auto w-[250px] rounded-lg mb-2">
+              <h3 class="text-xl font-semibold uppercase">The Vintage Fedora</h3>
+              <div class="mt-3 space-y-2">
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+
+                <div class="relative">
+                  <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+                  <div id="sizeDropdown3" class="size-dropdown">
+                    <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+                    <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+                    <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+                  </div>
+                </div>
+
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+              </div>
+              <div id="details3" class="details mt-2 text-sm hidden">
+                A classy vintage fedora made from high-quality felt. Available in multiple sizes for a perfect fit.
+              </div>
+            </div>
+
+            <!-- Hat 4 -->
+            <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+              <img src="images/buckethat.webp" alt="Hat 4" class="mx-auto w-[250px] rounded-lg mb-2">
+              <h3 class="text-xl font-semibold uppercase">The Casual Bucket Hat</h3>
+              <div class="mt-3 space-y-2">
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+
+                <div class="relative">
+                  <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+                  <div id="sizeDropdown4" class="size-dropdown">
+                    <a href="#" onclick="selectSize('sizeBtn4', 'One Size')">One Size</a>
+                  </div>
+                </div>
+
+                <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+              </div>
+              <div id="details4" class="details mt-2 text-sm hidden">
+                A relaxed fit bucket hat that is perfect for outdoor adventures and warm weather.
               </div>
             </div>
           </section>
         </main>
+
         `;
       }
+
+
+
+       // Replace content with the product details
+       document.getElementById('right-content').innerHTML = content;
+    }
+
+// Show Shirt product details in the right section
+    function showShirtProduct(product) {
+      let content = '';
+      if (product === 'shirt') {
+        content = `
+        <!-- MAIN CONTENT -->
+          <main class="pt-28 p-6 space-y-12">
+              <section>
+                <h2 class="text-4xl font-bold uppercase text-center">Men's Shirts</h2>
+                <p class="mt-4 text-xl text-center text-[#474747]">The perfect shirt to elevate your style. Choose your size and get more details!</p>
+              </section>
+
+              <section class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <!-- Shirt 1 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="images/copilottest.png" alt="Shirt 1" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Classic White Shirt</h3>
+                  <p class="mt-2 text-lg">A timeless white shirt, perfect for any occasion. Made from breathable cotton for ultimate comfort.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+                      <div id="sizeDropdown1" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details1" class="details mt-2 text-sm hidden">
+                    A timeless white shirt, perfect for any occasion. Breathable cotton. Machine washable. Available in sizes XS to XXL.
+                  </div>
+                </div>
+
+                <!-- Shirt 2 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="images/redshirt.png" alt="Shirt 2" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Bold Red Shirt</h3>
+                  <p class="mt-2 text-lg">A statement red shirt with a unique cut, perfect for those who want to stand out.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+                      <div id="sizeDropdown2" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details2" class="details mt-2 text-sm hidden">
+                    A statement red shirt made of a soft cotton blend. Slim fit. Sizes XS to XXL.
+                  </div>
+                </div>
+
+                <!-- Shirt 3 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="images/blueshirt.webp" alt="Shirt 3" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Casual Blue Shirt</h3>
+                  <p class="mt-2 text-lg">Perfect for relaxed weekends, this blue shirt adds a touch of casual sophistication.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+                      <div id="sizeDropdown3" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details3" class="details mt-2 text-sm hidden">
+                    Made of 100% cotton. Great for relaxed weekends. Sizes XS to XXL.
+                  </div>
+                </div>
+
+                <!-- Shirt 4 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="images/greenshirt.jpg" alt="Shirt 4" class="mx-auto w-[350px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Green Checkered Shirt</h3>
+                  <p class="mt-2 text-lg">Classic checkered pattern, perfect for a laid-back, yet stylish look. Available in multiple sizes.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+                      <div id="sizeDropdown4" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details4" class="details mt-2 text-sm hidden">
+                    A laid-back checkered shirt in rich green. Classic pattern. Cotton blend. Sizes XS to XXL.
+                  </div>
+                </div>
+              </section>
+            </main>
+
+        `;
+      }
+
+
+
+      // Replace content with the product details
+      document.getElementById('right-content').innerHTML = content;
+    }
+
+    // Show Hoodie product details in the right section
+    function showHoodieProduct(product) {
+      let content = '';
+      if (product === 'hoodie') {
+        content = `
+        <!-- MAIN CONTENT -->
+          <main class="pt-28 p-6 space-y-12">
+              <section>
+                <h2 class="text-4xl font-bold uppercase text-center">Men's Hoodie</h2>
+                <p class="mt-4 text-xl text-center text-[#474747]">Explore our cozy and stylish hoodies collection. Pick the perfect fit for your comfort and style!</p>
+              </section>
+
+              <section class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <!-- Hoodie 1 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="images/kuccihoodie.png" alt="Hoodie 1" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Classic Pullover Hoodie</h3>
+                  <p class="mt-2 text-lg">A timeless design, perfect for layering. Soft cotton for maximum comfort.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+                      <div id="sizeDropdown1" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn1', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details1" class="details mt-2 text-sm hidden">
+                    A cozy hoodie made with a soft cotton blend, perfect for layering or casual wear. Machine washable for convenience.
+                  </div>
+                </div>
+
+                <!-- hoodie 2 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="https://via.placeholder.com/400x400?text=Hoodie+2" alt="hoodie 2" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Zip-Up Hoodie</h3>
+                  <p class="mt-2 text-lg">Stay cool and stylish with our zip-up hoodie, offering convenience and comfort in one.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+                      <div id="sizeDropdown2" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn2', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details2" class="details mt-2 text-sm hidden">
+                    A versatile zip-up hoodie perfect for any casual outing or workout. Features a front pocket and drawstring hood.
+                  </div>
+                </div>
+
+                <!-- hoodie 3 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="https://via.placeholder.com/400x400?text=Hoodie+3" alt="hoodie 3" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Oversized Hoodie</h3>
+                  <p class="mt-2 text-lg">For a relaxed, laid-back look, this oversized hoodie will keep you comfy and stylish all day long.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+                      <div id="sizeDropdown3" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn3', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details3" class="details mt-2 text-sm hidden">
+                    A roomy oversized hoodie made from a soft cotton blend. Perfect for lounging or casual outings with a comfortable fit.
+                  </div>
+                </div>
+
+                <!-- hoodie 4 -->
+                <div class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition text-center">
+                  <img src="https://via.placeholder.com/400x400?text=Hoodie+4" alt="hoodie 4" class="mx-auto w-[250px] rounded-lg mb-2">
+                  <h3 class="text-xl font-semibold uppercase">The Performance Hoodie</h3>
+                  <p class="mt-2 text-lg">Ideal for activewear, this hoodie features breathable fabric that moves with you during workouts or outdoor activities.</p>
+                  <div class="mt-3 space-y-2">
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+
+                    <div class="relative">
+                      <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+                      <div id="sizeDropdown4" class="size-dropdown">
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XS')">XS</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'S')">S</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'M')">M</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'L')">L</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XL')">XL</a>
+                        <a href="#" onclick="selectSize('sizeBtn4', 'XXL')">XXL</a>
+                      </div>
+                    </div>
+
+                    <button class="bg-[#C64191] text-white w-full px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                  <div id="details4" class="details mt-2 text-sm hidden">
+                    A lightweight performance hoodie designed for active lifestyles. Made with moisture-wicking fabric to keep you cool and dry.
+                  </div>
+                </div>
+              </section>
+            </main>
+
+        `;
+      }
+
+
 
       // Replace content with the product details
       document.getElementById('right-content').innerHTML = content;
     }
   </script>
-</body>
+    <!-- JS -->
+    <script>
+      function toggleDetails(id) {
+        const details = document.getElementById(id);
+        details.style.display = details.style.display === "block" ? "none" : "block";
+      }
+  
+      function toggleSizeDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      }
+  
+      function selectSize(buttonId, size) {
+        const button = document.getElementById(buttonId);
+        button.innerHTML = size;
+        const dropdown = document.getElementById(buttonId.replace("Btn", "Dropdown"));
+        dropdown.style.display = "none";
+      }
+  
+      function addToCart(button) {
+        button.style.backgroundColor = "#474747";
+        button.innerHTML = "Added";
+        button.disabled = true;  // Optional: Disable the button after adding
+      }
+    </script>
+  </body>
 
 </html>
+    
