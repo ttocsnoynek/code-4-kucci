@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MEN'S SHIRT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    .details {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .size-dropdown {
+      display: none;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .size-dropdown a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .size-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's Shirt</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">The perfect shirt to elevate your style. Choose your size and get more details!</p>
+    </section>
+
+    <!-- Shirt 1 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/copilottest.png" alt="Shirt 1" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">The Classic White Shirt</h3>
+        <p class="mt-2 text-lg">A timeless white shirt, perfect for any occasion. Made from breathable cotton for ultimate comfort.</p>
+        
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+          
+          <!-- Size Dropdown -->
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+            <div id="sizeDropdown1" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn1', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div id="details1" class="details">
+          <p class="text-sm">Available in sizes XS to XXL. Machine washable. Ideal for business meetings or casual outings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shirt 2 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/redshirt.png" alt="Shirt 2" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">The Bold Red Shirt</h3>
+        <p class="mt-2 text-lg">A statement red shirt with a unique cut, perfect for those who want to stand out.</p>
+        
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+          
+          <!-- Size Dropdown -->
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+            <div id="sizeDropdown2" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn2', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div id="details2" class="details">
+          <p class="text-sm">This shirt is made of a soft cotton blend. Bold red color with a slim fit for a modern look.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shirt 3 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/blueshirt.webp" alt="Shirt 3" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">The Casual Blue Shirt</h3>
+        <p class="mt-2 text-lg">Perfect for relaxed weekends, this blue shirt adds a touch of casual sophistication.</p>
+        
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+          
+          <!-- Size Dropdown -->
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+            <div id="sizeDropdown3" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn3', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div id="details3" class="details">
+          <p class="text-sm">A comfortable and stylish blue shirt made of 100% cotton. The perfect addition to your weekend wardrobe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shirt 4 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/greenshirt.jpg" alt="Shirt 4" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">The Green Checkered Shirt</h3>
+        <p class="mt-2 text-lg">Classic checkered pattern, perfect for a laid-back, yet stylish look. Available in multiple sizes.</p>
+        
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+          
+          <!-- Size Dropdown -->
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+            <div id="sizeDropdown4" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn4', 'XS')">XS</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'XL')">XL</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'XXL')">XXL</a>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div id="details4" class="details">
+          <p class="text-sm">A soft cotton checkered shirt. Casual yet versatile enough to be dressed up or down.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CALL TO ACTION SECTION -->
+  <section class="bg-[#C64191] text-white text-center py-6 fixed bottom-0 left-0 w-full z-50">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">BUY NOW</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS RESERVED
+    </footer>
+  </section>
+
+  <!-- JS -->
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleSizeDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function selectSize(buttonId, size) {
+      const button = document.getElementById(buttonId);
+      button.innerHTML = size;
+      const dropdown = document.getElementById(buttonId.replace("Btn", "Dropdown"));
+      dropdown.style.display = "none";
+    }
+
+    function addToCart(button) {
+      button.style.backgroundColor = "#474747";
+      button.innerHTML = "Added";
+      button.disabled = true;  // Optional: Disable the button after adding
+    }
+  </script>
+</body>
+</html>

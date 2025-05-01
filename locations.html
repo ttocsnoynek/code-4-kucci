@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | SHOWCASE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <nav id="mobileNav" class="md:hidden hidden flex-col space-y-4 p-4 text-sm uppercase tracking-wider bg-white shadow-md mt-20">
+    <a href="index.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Showcase</a>
+    <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Men</a>
+    <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Women</a>
+    <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Locations</a>
+    <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">About</a>
+  </nav>
+
+  <!-- LOCATIONS SECTION -->
+  <section class="p-8">
+    <h2 class="text-4xl font-extrabold text-center mb-10 text-[#C64191]">Our Locations</h2>
+
+    <!-- LAS VEGAS -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">Las Vegas</h3>
+      <p class="text-lg mb-4">3200 S Las Vegas Blvd, Unit 600, Las Vegas, NV 89109</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/LJvvv4vBFuZwLnLs8" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.7633444880953!2d-115.1701151!3d36.1270255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c43a3a0a0ab1%3A0x66102e707d7c5853!2s3200%20Las%20Vegas%20Blvd%20S%20%23600%2C%20Las%20Vegas%2C%20NV%2089109!5e0!3m2!1sen!2sus!4v1680801370151!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- NEW YORK -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">New York</h3>
+      <p class="text-lg mb-4">90-15 Queens Blvd, Elmhurst, NY 11373</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/JgoTHPWDUXXrKQQ58" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2490161530045!2d-73.8734024235856!3d40.73454583623445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e4bc34f3c53%3A0x9b21bcf0913e024!2s90-15%20Queens%20Blvd%2C%20Elmhurst%2C%20NY%2011373!5e0!3m2!1sen!2sus!4v1745437368774!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- LOS ANGELES -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">Los Angeles</h3>
+      <p class="text-lg mb-4">8500 Beverly Blvd, Los Angeles, CA 90048</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/kRQPHayBC3iK8nDH8" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.045632448379!2d-118.37662248478774!3d34.07531582415369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb8e1c84120f%3A0x96c3d97c61536b1c!2s8500%20Beverly%20Blvd%2C%20Los%20Angeles%2C%20CA%2090048!5e0!3m2!1sen!2sus!4v1680801481564!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- MIAMI -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">Miami</h3>
+      <p class="text-lg mb-4">19501 Biscayne Blvd, Aventura, FL 33180</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/YTQkU8gZDRURQFcP6" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.2796848990865!2d-80.14493282396165!3d25.95622787633825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9accfb8dc79cf%3A0xe0e1c598d9c5d21b!2s19501%20Biscayne%20Blvd%2C%20Aventura%2C%20FL%2033180!5e0!3m2!1sen!2sus!4v1680801529276!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- CHICAGO -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">Chicago</h3>
+      <p class="text-lg mb-4">835 N Michigan Ave, Chicago, IL 60611</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/Mo5pDKL5zRhbWT6Y7" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.513147844068!2d-87.6259551235659!3d41.89723217126912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34b15b805f1%3A0xe306be9dfab03371!2s835%20N%20Michigan%20Ave%2C%20Chicago%2C%20IL%2060611!5e0!3m2!1sen!2sus!4v1680801593895!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- SCOTTSDALE -->
+    <div class="location-card mb-12 text-center">
+      <h3 class="text-3xl font-extrabold text-[#C64191]">Scottsdale</h3>
+      <p class="text-lg mb-4">7014 E Camelback Rd #2133, Scottsdale, AZ 85251</p>
+      <p class="text-pink-600">Find us on <a href="https://goo.gl/maps/XLfaKHxdF7pJ4idq7" target="_blank" class="underline">Google Maps</a></p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.764015985859!2d-111.92903892362789!3d33.5020525466661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0c154e7fc31d%3A0xd1b1c3b1f5df5981!2s7014%20E%20Camelback%20Rd%20%232133%2C%20Scottsdale%2C%20AZ%2085251!5e0!3m2!1sen!2sus!4v1680801656504!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+  </section>
+  <script>
+    document.getElementById("menuBtn").addEventListener("click", function () {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("hidden");
+    });
+  </script>
+  
+</body>
+</html>

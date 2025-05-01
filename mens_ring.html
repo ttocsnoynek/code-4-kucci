@@ -1,0 +1,215 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MEN'S RINGS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    .details {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .size-dropdown {
+      display: none;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .size-dropdown a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .size-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's RINGS</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">Adorn your hands with elegance. KUCCI's rings are crafted to perfection, symbolizing power, luxury, and style.</p>
+    </section>
+
+    <!-- Shop Options (RING 1) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Ring+1" alt="Ring 1" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE TITAN'S RING</h3>
+        <p class="mt-2 text-lg">A statement of power. The Titan's Ring features a bold, intricate design with a gemstone center. For the man who dares to lead.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+            <div id="sizeDropdown1" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn1', '7')">7</a>
+              <a href="#" onclick="selectSize('sizeBtn1', '8')">8</a>
+              <a href="#" onclick="selectSize('sizeBtn1', '9')">9</a>
+              <a href="#" onclick="selectSize('sizeBtn1', '10')">10</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details1" class="details">
+          <p class="text-sm">A bold, luxurious piece that stands out with its unique gemstone design. The Titan's Ring is perfect for any power player.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (RING 2) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Ring+2" alt="Ring 2" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE GOLDEN CROWN</h3>
+        <p class="mt-2 text-lg">An embodiment of regal elegance. The Golden Crown features an ornate design, fit for royalty. Make a statement that demands attention.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+            <div id="sizeDropdown2" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn2', '7')">7</a>
+              <a href="#" onclick="selectSize('sizeBtn2', '8')">8</a>
+              <a href="#" onclick="selectSize('sizeBtn2', '9')">9</a>
+              <a href="#" onclick="selectSize('sizeBtn2', '10')">10</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details2" class="details">
+          <p class="text-sm">A luxurious ring that speaks of power, grace, and wealth. The Golden Crown is for those who appreciate the finer things in life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (RING 3) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Ring+3" alt="Ring 3" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE BLACK DIAMOND RING</h3>
+        <p class="mt-2 text-lg">Dark, bold, and refined. The Black Diamond Ring features a luxurious black diamond centerpiece, adding a touch of mystery to your style.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+            <div id="sizeDropdown3" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn3', '7')">7</a>
+              <a href="#" onclick="selectSize('sizeBtn3', '8')">8</a>
+              <a href="#" onclick="selectSize('sizeBtn3', '9')">9</a>
+              <a href="#" onclick="selectSize('sizeBtn3', '10')">10</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details3" class="details">
+          <p class="text-sm">For the man who embraces mystery and elegance. The Black Diamond Ring is a striking piece that commands attention.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (RING 4) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Ring+4" alt="Ring 4" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE SILVER ECLIPSE</h3>
+        <p class="mt-2 text-lg">A sleek and minimalist design, the Silver Eclipse is perfect for the modern man who seeks elegance in simplicity.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+            <div id="sizeDropdown4" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn4', '7')">7</a>
+              <a href="#" onclick="selectSize('sizeBtn4', '8')">8</a>
+              <a href="#" onclick="selectSize('sizeBtn4', '9')">9</a>
+              <a href="#" onclick="selectSize('sizeBtn4', '10')">10</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details4" class="details">
+          <p class="text-sm">A modern design with a minimalist touch. The Silver Eclipse ring adds a subtle yet impactful elegance to any ensemble.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CALL TO ACTION SECTION -->
+  <section class="bg-[#C64191] text-white text-center py-6 fixed bottom-0 left-0 w-full z-50">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">BUY NOW</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS RESERVED
+    </footer>
+  </section>
+
+  <!-- JS -->
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleSizeDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function selectSize(buttonId, size) {
+      const button = document.getElementById(buttonId);
+      button.innerHTML = size;
+      const dropdown = document.getElementById(buttonId.replace("Btn", "Dropdown"));
+      dropdown.style.display = "none";
+    }
+
+    function addToCart(button) {
+      button.style.backgroundColor = "#474747";
+      button.innerHTML = "Added";
+      button.disabled = true;
+    }
+  </script>
+</body>
+</html>

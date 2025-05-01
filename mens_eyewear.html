@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MEN'S EYEWEAR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Helvetica, Arial, sans-serif; }
+    .logo-font { font-family: 'Cinzel', serif; }
+    .details { display: none; padding: 10px; background-color: #f1f1f1; border-radius: 8px; margin-top: 8px; }
+    .size-dropdown { display: none; background-color: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: absolute; z-index: 10; }
+    .size-dropdown a { display: block; padding: 8px; text-decoration: none; color: black; }
+    .size-dropdown a:hover { background-color: #f0f0f0; }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's EYEWEAR</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">Visionary frames that do more than help you see — they help you be seen.</p>
+    </section>
+
+    <!-- Shop Option 1 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/tolazy.png" alt="Eyewear 1" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">CRYSTAL CLEAR AVIATORS</h3>
+        <p class="mt-2 text-lg">Precision-cut lenses. Polished for flight, fit for fashion. These are not your pilot’s aviators.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details1" class="details">
+          <p class="text-sm">UV-protected gradient lenses. Gold-plated arms. Adjustable nose grips.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Option 2 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/tolazy.png" alt="Eyewear 2" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">BLACKOUT SHIELD VISOR</h3>
+        <p class="mt-2 text-lg">Futuristic, minimal, dominant. The world looks different behind these shields.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details2" class="details">
+          <p class="text-sm">Seamless wrap-around fit. Anti-reflective coating. Not for the shy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Option 3 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/tolazy.png" alt="Eyewear 3" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">KUCCI TORTOISE CLASSIC</h3>
+        <p class="mt-2 text-lg">A refined silhouette with retro flair. Understated confidence in every frame.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details3" class="details">
+          <p class="text-sm">Italian acetate frames. Spring hinges. KUCCI logo etched in gold.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Option 4 -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="images/tolazy.png" alt="Eyewear 4" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">FLEXFRAME BLUE BLOCKERS</h3>
+        <p class="mt-2 text-lg">Stylish protection for the always-online. Stream, scroll, stun.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details4" class="details">
+          <p class="text-sm">Blue light filter lenses. Ultra-lightweight titanium build. Designed for hustle.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="bg-[#C64191] text-white text-center py-6 fixed bottom-0 left-0 w-full z-50">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">BUY NOW</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS RESERVED
+    </footer>
+  </section>
+
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+    function addToCart(button) {
+      button.style.backgroundColor = "#474747";
+      button.innerHTML = "Added";
+      button.disabled = true;
+    }
+  </script>
+</body>
+</html>
+

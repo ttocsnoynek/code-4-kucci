@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MEN'S CASE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+    .details {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's Case</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">Dress your phone like your fit—luxury from screen to scene.</p>
+    </section>
+
+    <!-- Phone Case Options -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Case 1 -->
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <img src="images/tolazy.png" alt="Phone Case 1" class="w-full md:w-1/3 rounded-lg shadow-md">
+        <div>
+          <h3 class="text-2xl font-semibold uppercase">THE GLASS ARMOR</h3>
+          <p class="mt-2 text-lg">Ultra-clear back with chrome edges. Make your phone look like a jewel.</p>
+          <!-- Replace this section inside each product (right before or after "Add to Cart" button) -->
+
+        <div class="mt-4">
+            <label for="phoneSelect1" class="block text-sm font-semibold mb-1">Phone:</label>
+            <select id="phoneSelect1" class="border px-3 py-2 rounded shadow w-full">
+            <option>iPhone 13</option>
+            <option>iPhone 14</option>
+            <option>iPhone 15</option>
+            <option>iPhone 16</option>
+            </select>
+        </div>
+  
+          <div class="flex space-x-4 mt-4">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow">Add to Cart</button>
+          </div>
+          <div id="details1" class="details">
+            <p>Scratch-proof. Shockproof. Clout-certified.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <img src="images/tolazy.png" alt="Phone Case 2" class="w-full md:w-1/3 rounded-lg shadow-md">
+        <div>
+          <h3 class="text-2xl font-semibold uppercase">THE BLACK MIRROR</h3>
+          <p class="mt-2 text-lg">Matte finish with reflective sides. Simple. Dangerous. You.</p>
+          <!-- Replace this section inside each product (right before or after "Add to Cart" button) -->
+
+        <div class="mt-4">
+            <label for="phoneSelect1" class="block text-sm font-semibold mb-1">Phone:</label>
+            <select id="phoneSelect1" class="border px-3 py-2 rounded shadow w-full">
+            <option>iPhone 13</option>
+            <option>iPhone 14</option>
+            <option>iPhone 15</option>
+            <option>iPhone 16</option>
+            </select>
+        </div>
+  
+          <div class="flex space-x-4 mt-4">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow">Add to Cart</button>
+          </div>
+          <div id="details2" class="details">
+            <p>Wireless charging compatible. Fingerprint resistant.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <img src="images/tolazy.png" alt="Phone Case 3" class="w-full md:w-1/3 rounded-lg shadow-md">
+        <div>
+          <h3 class="text-2xl font-semibold uppercase">THE CROCODILE WRAP</h3>
+          <p class="mt-2 text-lg">Faux croc leather, real elite vibes. Grip luxury in your hand.</p>
+          <!-- Replace this section inside each product (right before or after "Add to Cart" button) -->
+
+        <div class="mt-4">
+            <label for="phoneSelect1" class="block text-sm font-semibold mb-1">Phone:</label>
+            <select id="phoneSelect1" class="border px-3 py-2 rounded shadow w-full">
+            <option>iPhone 13</option>
+            <option>iPhone 14</option>
+            <option>iPhone 15</option>
+            <option>iPhone 16</option>
+            </select>
+        </div>
+        
+          <div class="flex space-x-4 mt-4">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow">Add to Cart</button>
+          </div>
+          <div id="details3" class="details">
+            <p>Durable texture. Luxe lining. Smells like money.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <img src="images/tolazy.png" alt="Phone Case 4" class="w-full md:w-1/3 rounded-lg shadow-md">
+        <div>
+          <h3 class="text-2xl font-semibold uppercase">THE TECH ARMOR</h3>
+          <p class="mt-2 text-lg">Kevlar-style build for the man on the move. Secure. Sleek. Supreme.</p>
+          <!-- Replace this section inside each product (right before or after "Add to Cart" button) -->
+
+        <div class="mt-4">
+            <label for="phoneSelect1" class="block text-sm font-semibold mb-1">Phone:</label>
+            <select id="phoneSelect1" class="border px-3 py-2 rounded shadow w-full">
+            <option>iPhone 13</option>
+            <option>iPhone 14</option>
+            <option>iPhone 15</option>
+            <option>iPhone 16</option>
+            </select>
+        </div>
+        
+          <div class="flex space-x-4 mt-4">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow">Add to Cart</button>
+          </div>
+          <div id="details4" class="details">
+            <p>Military grade drop protection. Looks like it cost five figures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA BAR -->
+  <section class="bg-[#C64191] text-white text-center py-6 fixed bottom-0 left-0 w-full z-50">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">BUY NOW</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS RESERVED
+    </footer>
+  </section>
+
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

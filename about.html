@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KUCCI | ABOUT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-black">
+
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">About</a>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav id="mobileNav" class="md:hidden hidden flex-col space-y-4 p-4 text-sm uppercase tracking-wider bg-white shadow-md">
+    <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Showcase</a>
+    <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Men</a>
+    <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Women</a>
+    <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Locations</a>
+    <a href="about.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">About</a>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section class="p-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-6 text-[#C64191]">THE KUCCI BRAND</h2>
+    <p class="max-w-2xl mx-auto text-lg mb-10 leading-relaxed tracking-wide uppercase">
+      KUCCI IS MORE THAN A BRAND—IT'S A MOVEMENT. A SOCIAL EXPERIMENT: HOW MUCH MONEY CAN WE GET YOU TO GIVE US FOR PRODUCTS THAT COST ABOUT 10% OF THE COST TO MAKE. YES, WE KNOW OUR PRICES ARE WAY TOO HIGH—BUT WE DGAF. IT’S COMPANY POLICY TO MARK IT UP AT LEAST 100X. YOU’RE WELCOME.
+    </p>
+    
+
+    <!-- EXECUTIVE BIOS -->
+    <div class="mb-16">
+      <h3 class="text-3xl font-bold text-[#C64191] mb-4">OUR EXECUTIVE TEAM</h3>
+      <div class="space-y-8">
+        <div>
+          <h4 class="text-xl font-semibold">CEO – Fabrizio Extra</h4>
+          <p>Former lounge singer turned fashion mogul. Believes in diamonds at brunch and velvet in July.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold">Creative Director – Vika LeSmoke</h4>
+          <p>Draws inspiration from cloud formations and 2000s clubwear. Once designed a suit made entirely of pearls.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold">Chief Vibes Officer – Chadwell “Chaddy” Lux</h4>
+          <p>Not entirely sure what he does, but morale has never been higher.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="max-w-xl mx-auto">
+      <h3 class="text-3xl font-bold text-[#C64191] mb-4">CONTACT US</h3>
+      <form class="space-y-4 text-left">
+        <label class="block">
+          <span class="text-gray-700">Name</span>
+          <input type="text" class="mt-1 block w-full border border-gray-300 rounded-lg p-2" required>
+        </label>
+        <label class="block">
+          <span class="text-gray-700">Email</span>
+          <input type="email" class="mt-1 block w-full border border-gray-300 rounded-lg p-2" required>
+        </label>
+        <label class="block">
+          <span class="text-gray-700">Message</span>
+          <textarea class="mt-1 block w-full border border-gray-300 rounded-lg p-2" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="bg-[#C64191] text-white px-6 py-2 rounded-lg shadow hover:bg-pink-700 transition">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("hidden");
+    });
+  </script>
+  
+</body>
+</html>

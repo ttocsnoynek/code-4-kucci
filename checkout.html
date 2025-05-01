@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | Checkout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+    .input-field {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .progress-bar {
+      height: 5px;
+      background-color: #C64191;
+      margin-top: 20px;
+    }
+
+    /* Hides the bottom bar when scrolling up */
+    #bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #C64191;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #bottom-bar.hide {
+      transform: translateY(100%);
+    }
+
+    /* Style for the Lux Box */
+    .lux-box {
+      border: 2px solid #C64191;
+      padding: 6px 12px;
+      margin-top: 10px;
+      background-color: #fff;
+      color: #C64191;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .lux-box:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-16">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Checkout</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">Please review your order and provide your billing & shipping information to complete your purchase.</p>
+
+      <!-- Progress Indicator -->
+      <div class="progress-bar"></div>
+      
+      <!-- Billing Information -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold">Billing Information</h3>
+        <input type="text" placeholder="Full Name" class="input-field" required>
+        <input type="email" placeholder="Email Address" class="input-field" required>
+        <input type="text" placeholder="Billing Address" class="input-field" required>
+        <input type="text" placeholder="City" class="input-field" required>
+        <input type="text" placeholder="State/Province" class="input-field" required>
+        <input type="text" placeholder="ZIP/Postal Code" class="input-field" required>
+      </section>
+
+      <!-- Shipping Information -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold">Shipping Information</h3>
+        <input type="text" placeholder="Full Name" class="input-field" required>
+        <input type="email" placeholder="Email Address" class="input-field" required>
+        <input type="text" placeholder="Shipping Address" class="input-field" required>
+        <input type="text" placeholder="City" class="input-field" required>
+        <input type="text" placeholder="State/Province" class="input-field" required>
+        <input type="text" placeholder="ZIP/Postal Code" class="input-field" required>
+      </section>
+
+      <!-- Payment Options -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold">Payment Options</h3>
+        <select id="payment-method" class="input-field" required>
+          <option value="choose-payment-method">Choose Payment Method</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="apple-pay">Apple Pay</option>
+          <option value="google-pay">Google Pay</option>
+        </select>
+      </section>
+
+      <!-- Credit Card Details (Only Visible When Credit Card is Selected) -->
+      <section id="credit-card-details" class="mt-8 hidden">
+        <h3 class="text-2xl font-semibold">Credit Card Details</h3>
+        <input type="text" placeholder="Card Number" class="input-field">
+        <input type="text" placeholder="Expiration Date" class="input-field">
+        <input type="text" placeholder="Name on Card" class="input-field">
+        <input type="text" placeholder="CVV (3 digits)" class="input-field">
+      </section>
+
+      <!-- Promotion Code -->
+      <section class="mt-8">
+        <h3 class="text-2xl font-semibold">Have a Promotion Code?</h3>
+        <input type="text" id="promotion-code" placeholder="Enter your code here" class="input-field">
+        
+        <!-- Lux Box will be hidden initially -->
+        <div id="lux-box" class="lux-box hidden">
+          $8008135$
+        </div>
+      </section>
+
+      <!-- Checkout Button -->
+      <section class="mt-8 text-center">
+        <button class="bg-[#C64191] text-white px-6 py-3 rounded-2xl shadow">Complete Purchase</button>
+      </section>
+    </section>
+  </main>
+
+  <!-- CALL TO ACTION SECTION (Bottom Bar) -->
+  <section id="bottom-bar">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">PAY US NOW, WE DARE YOU</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS FLEXED
+    </footer>
+  </section>
+
+  <!-- JS -->
+  <script>
+    // Show/hide credit card details when the payment method is changed
+    document.getElementById("payment-method").addEventListener("change", function () {
+      const creditCardDetails = document.getElementById("credit-card-details");
+      if (this.value === "credit-card") {
+        creditCardDetails.classList.remove("hidden");
+      } else {
+        creditCardDetails.classList.add("hidden");
+      }
+    });
+
+    // Bottom bar scroll hide effect
+    let lastScrollTop = 0;
+    const bottomBar = document.getElementById('bottom-bar');
+    window.addEventListener('scroll', function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        bottomBar.classList.add('hide');
+      } else {
+        bottomBar.classList.remove('hide');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Show lux box on entering "8008135" and trigger redirection
+    document.getElementById("promotion-code").addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        if (this.value === "8008135") {
+          const luxBox = document.getElementById("lux-box");
+          luxBox.classList.remove("hidden");
+          
+          luxBox.addEventListener("click", function () {
+            window.location.href = "developer-page.html";
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

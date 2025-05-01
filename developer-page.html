@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KUCCI | Developer Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+    .lux-box {
+      border: 2px solid #C64191;
+      padding: 16px;
+      border-radius: 12px;
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .dark-mode {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+    .dark-mode .lux-box {
+      background-color: #111 !important;
+      color: #fff !important;
+      border-color: #C64191;
+    }
+    .lock-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      display: none;
+    }
+    .lock-button {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: #C64191;
+      color: white;
+      padding: 12px;
+      border-radius: 9999px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Showcase</a>
+      <a href="mens.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Men</a>
+      <a href="womens.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Women</a>
+      <a href="locations.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Locations</a>
+      <a href="about.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="pt-28 p-6 max-w-3xl mx-auto">
+    <div class="lux-box bg-white shadow-md text-black text-center text-2xl uppercase tracking-widest logo-font border-4 border-[#C64191]">
+      Developer Panel
+    </div>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="mt-8">
+      <button onclick="toggleDarkMode()" class="bg-[#C64191] text-white px-6 py-2 rounded-full font-semibold shadow">
+        Toggle Dark Mode
+      </button>
+    </div>
+
+    <!-- ANNOUNCEMENT BOX -->
+    <div class="mt-8 space-y-4">
+      <input id="announcementInput" type="text" placeholder="Enter announcement..." class="w-full p-2 border rounded" />
+      <button onclick="makeAnnouncement()" class="bg-black text-white px-4 py-2 rounded">Announce</button>
+      <div id="announcementContainer"></div>
+    </div>
+  </main>
+
+  <!-- LOCK BUTTON -->
+  <div class="lock-button" onclick="tryUnlock()">🔒</div>
+  <div id="lockOverlay" class="lock-overlay">LOCKED 🔐</div>
+
+  <script>
+    // DARK MODE
+    function applyDarkModeState() {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    }
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark);
+    }
+
+    // ANNOUNCEMENT
+    function makeAnnouncement() {
+      const input = document.getElementById("announcementInput");
+      const message = input.value.trim();
+      if (message === "") return;
+
+      const box = document.createElement("div");
+      box.className = "lux-box";
+      box.textContent = message;
+
+      box.onclick = () => box.remove();
+
+      document.getElementById("announcementContainer").appendChild(box);
+      input.value = "";
+
+      setTimeout(() => {
+        box.remove();
+      }, 10000);
+    }
+
+    // LOCKDOWN FEATURE
+    function applyLockState() {
+      if (localStorage.getItem("isLocked") === "true") {
+        document.getElementById("lockOverlay").style.display = "flex";
+      } else {
+        document.getElementById("lockOverlay").style.display = "none";
+      }
+    }
+
+    function tryUnlock() {
+      if (localStorage.getItem("isLocked") !== "true") {
+        const confirmLock = confirm("Enter lockdown?");
+        if (confirmLock) {
+          localStorage.setItem("isLocked", "true");
+          applyLockState();
+        }
+      } else {
+        const confirmUnlock = confirm("Unlock?");
+        if (confirmUnlock) {
+          const code = prompt("Enter unlock code:");
+          if (code === "8008135") {
+            localStorage.setItem("isLocked", "false");
+            applyLockState();
+          } else {
+            alert("Wrong code.");
+          }
+        }
+      }
+    }
+
+    // Cross-tab sync for lock state
+    window.addEventListener('storage', (event) => {
+      if (event.key === 'kucciLocked') {
+        if (event.newValue === 'true') {
+          document.getElementById('lockOverlay').style.display = 'flex';
+        } else {
+          document.getElementById('lockOverlay').style.display = 'none';
+        }
+      }
+    });
+
+    // Check lock state on load
+    window.onload = function () {
+      applyDarkModeState();
+      applyLockState();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MENS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow font-semibold">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <nav id="mobileNav" class="md:hidden hidden flex-col space-y-4 p-4 text-sm uppercase tracking-wider bg-white shadow-md mt-20">
+    <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Showcase</a>
+    <a href="mens.html" class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow">Men</a>
+    <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Women</a>
+    <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">Locations</a>
+    <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow">About</a>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="pt-28 flex">
+    <!-- Sidebar Buttons -->
+    <div class="w-1/4 p-4 space-y-4">
+      <button class="bg-[#C64191] text-white w-full py-3 rounded-2xl font-semibold" onclick="toggleDropdown('apparel')">Apparel</button>
+      <div id="dropdown-apparel" class="space-y-2 hidden mt-2">
+        <a href="javascript:void(0)" class="block bg-gray-100 p-4 rounded-2xl shadow text-center" onclick="showProduct('hat')">HAT</a>
+        <a href="mens_shirt.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">SHIRT</a>
+        <a href="mens_hoodie.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">HOODIE</a>
+        <a href="mens_underwear.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">UNDERWEAR</a>
+        <a href="mens_pants.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">PANTS</a>
+        <a href="mens_short.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">SHORT</a>
+        <a href="mens_shoe.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">SHOE</a>
+      </div>
+
+      <button class="bg-[#C64191] text-white w-full py-3 rounded-2xl font-semibold" onclick="toggleDropdown('fragrance')">Fragrance</button>
+      <div id="dropdown-fragrance" class="space-y-2 hidden mt-2">
+        <a href="mens_cologne.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">COLOGNE</a>
+      </div>
+
+      <button class="bg-[#C64191] text-white w-full py-3 rounded-2xl font-semibold" onclick="toggleDropdown('jewelry')">Jewelry</button>
+      <div id="dropdown-jewelry" class="space-y-2 hidden mt-2">
+        <a href="mens_ring.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">RING</a>
+        <a href="mens_watch.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">WATCH</a>
+        <a href="mens_necklace.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">NECKLACE</a>
+        <a href="mens_earing.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">EARING</a>
+        <a href="mens_grillz.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">GRILLZ</a>
+      </div>
+
+      <button class="bg-[#C64191] text-white w-full py-3 rounded-2xl font-semibold" onclick="toggleDropdown('accessory')">Accessory</button>
+      <div id="dropdown-accessory" class="space-y-2 hidden mt-2">
+        <a href="mens_bag.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">BAG</a>
+        <a href="mens_firearms.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">FIREARMS</a>
+        <a href="mens_belt.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">BELT</a>
+        <a href="mens_eyewear.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">EYEWEAR</a>
+        <a href="mens_keychain.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">KEYCHAIN</a>
+        <a href="mens_wallet.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">WALLET</a>
+        <a href="mens_case.html" class="block bg-gray-100 p-4 rounded-2xl shadow text-center">CASE</a>
+      </div>
+    </div>
+
+    <!-- Placeholder for right-side content -->
+    <div class="w-3/4 p-4" id="right-content">
+      <h2 class="text-4xl font-bold uppercase">Explore the Collection</h2>
+      <p class="mt-4">Choose a category to get started.</p>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script>
+    function toggleDropdown(id) {
+      const dropdowns = ['apparel', 'fragrance', 'jewelry', 'accessory'];
+      dropdowns.forEach(d => {
+        const element = document.getElementById('dropdown-' + d);
+        if (d === id) {
+          element.classList.toggle('hidden');
+        } else {
+          element.classList.add('hidden');
+        }
+      });
+    }
+
+    // Show Hat product details in the right section
+    function showProduct(product) {
+      let content = '';
+      if (product === 'hat') {
+        content = `
+        <!-- MAIN CONTENT -->
+        <main class="main-content pt-28">
+          <section>
+            <h2 class="text-4xl font-bold uppercase text-center" id="hats">Men's Hats</h2>
+            <p class="mt-4 text-xl text-center text-[#474747]">Explore our collection of stylish hats to complete your look. Choose your style and size!</p>
+          </section>
+
+          <!-- Hats Section Grid -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Hat 1 -->
+            <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 shadow-md">
+              <img src="images/blackbeanie.webp" alt="The Classic Black Beanie" class="w-64 h-64 object-cover rounded-lg mb-4">
+              <h3 class="text-2xl font-semibold uppercase">The Classic Black Beanie</h3>
+              <p class="mt-2 text-lg">A must-have for colder days. This sleek black beanie offers warmth with a minimalist design.</p>
+              <div class="flex flex-col items-center space-y-4 mt-4">
+                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+                <div class="relative">
+                  <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+                  <div id="sizeDropdown1" class="size-dropdown">
+                    <a href="#" onclick="selectSize('sizeBtn1', 'One Size')">One Size</a>
+                  </div>
+                </div>
+                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+              </div>
+              <div id="details1" class="details">
+                <p class="text-sm">A stylish beanie made from a wool blend, perfect for keeping you warm and fashionable. One size fits most.</p>
+              </div>
+            </div>
+
+            <!-- Hat 2 -->
+            <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 shadow-md">
+              <img src="images/kuccicap.png" alt="The Trendy Snapback" class="w-64 h-64 object-cover rounded-lg mb-4">
+              <h3 class="text-2xl font-semibold uppercase">The Trendy Snapback</h3>
+              <p class="mt-2 text-lg">A bold snapback with a modern edge, perfect for those who want to stand out.</p>
+              <div class="flex flex-col items-center space-y-4 mt-4">
+                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+                <div class="relative">
+                  <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+                  <div id="sizeDropdown2" class="size-dropdown">
+                    <a href="#" onclick="selectSize('sizeBtn2', 'Adjustable')">Adjustable</a>
+                  </div>
+                </div>
+                <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+              </div>
+              <div id="details2" class="details">
+                <p class="text-sm">This snapback offers a stylish, adjustable fit, making it a versatile addition to your wardrobe.</p>
+              </div>
+            </div>
+          </section>
+        </main>
+        `;
+      }
+
+      // Replace content with the product details
+      document.getElementById('right-content').innerHTML = content;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUCCI | MEN'S SHORTS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .logo-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    .details {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .size-dropdown {
+      display: none;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      z-index: 10;
+    }
+
+    .size-dropdown a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .size-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pb-40">
+  <!-- HEADER -->
+  <header class="p-4 shadow-md flex justify-between items-center fixed top-0 left-0 w-full z-50 bg-white">
+    <h1 class="text-4xl font-bold tracking-widest logo-font">KUCCI</h1>
+    <button id="menuBtn" class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <nav id="navMenu" class="hidden md:flex space-x-4 text-sm uppercase tracking-wider">
+      <a href="index.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Showcase</a>
+      <a href="mens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Men</a>
+      <a href="womens.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Women</a>
+      <a href="locations.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">Locations</a>
+      <a href="about.html" class="bg-gray-100 px-4 py-2 rounded-2xl shadow hover:shadow-md transition">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="pt-28 p-6 space-y-12">
+    <section>
+      <h2 class="text-4xl font-bold uppercase text-center">Men's SHORTS</h2>
+      <p class="mt-4 text-xl text-center text-[#474747]">Lightweight, high-class shorts for endless summer days and VIP nights out. Shop KUCCI’s exclusive shorts collection.</p>
+    </section>
+
+    <!-- Shop Options (SHORTS 1) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Shorts+1" alt="Shorts 1" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE LUXE ESCAPADE</h3>
+        <p class="mt-2 text-lg">Sleek and breezy, designed for effortless style from beach to brunch. The ultimate in laid-back luxury.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details1')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown1')">Size</button>
+            <div id="sizeDropdown1" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn1', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn1', 'XL')">XL</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details1" class="details">
+          <p class="text-sm">Breathable tech fabric meets KUCCI’s signature stretch. These shorts were made for movement — and luxury.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (SHORTS 2) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Shorts+2" alt="Shorts 2" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE ISLANDER</h3>
+        <p class="mt-2 text-lg">Rugged yet refined. Sun-faded style in premium fabrics. Perfect for sunset views and spontaneous adventures.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details2')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown2')">Size</button>
+            <div id="sizeDropdown2" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn2', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn2', 'XL')">XL</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details2" class="details">
+          <p class="text-sm">Subtle stitching. Elevated fit. A nod to island time without sacrificing luxury style.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (SHORTS 3) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Shorts+3" alt="Shorts 3" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE CITY ESCAPE</h3>
+        <p class="mt-2 text-lg">Tapered fit for a sleek silhouette, equipped with KUCCI’s signature pockets. Versatility for the modern man.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details3')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown3')">Size</button>
+            <div id="sizeDropdown3" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn3', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn3', 'XL')">XL</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details3" class="details">
+          <p class="text-sm">Sharp, sleek, and flexible. KUCCI’s city shorts let you live in the now while staying ahead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Options (SHORTS 4) -->
+    <section class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+      <div class="w-full md:w-1/3">
+        <img src="https://via.placeholder.com/400x400?text=Shorts+4" alt="Shorts 4" class="w-full rounded-lg shadow-md">
+      </div>
+      <div class="w-full md:w-2/3">
+        <h3 class="text-2xl font-semibold uppercase">THE ALL-STAR</h3>
+        <p class="mt-2 text-lg">A premium hybrid short, designed for effortless transitions between workouts and luxury lounges.</p>
+        <div class="flex space-x-4 mt-4">
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleDetails('details4')">More Details</button>
+          <div class="relative">
+            <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="toggleSizeDropdown('sizeDropdown4')">Size</button>
+            <div id="sizeDropdown4" class="size-dropdown">
+              <a href="#" onclick="selectSize('sizeBtn4', 'S')">S</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'M')">M</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'L')">L</a>
+              <a href="#" onclick="selectSize('sizeBtn4', 'XL')">XL</a>
+            </div>
+          </div>
+          <button class="bg-[#C64191] text-white px-4 py-2 rounded-2xl shadow" onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div id="details4" class="details">
+          <p class="text-sm">Endless comfort, endless class. KUCCI’s all-star short is an all-day statement.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CALL TO ACTION SECTION -->
+  <section class="bg-[#C64191] text-white text-center py-6 fixed bottom-0 left-0 w-full z-50">
+    <a href="checkout.html" class="text-3xl font-extrabold tracking-wider uppercase transition duration-300 hover:text-[#474747]">BUY NOW</a>
+    <footer class="mt-2 text-sm tracking-widest">
+      2025 KUCCI — ALL RIGHTS RESERVED
+    </footer>
+  </section>
+
+  <!-- JS -->
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleSizeDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function selectSize(buttonId, size) {
+      const button = document.getElementById(buttonId);
+      button.innerHTML = size;
+      const dropdown = document.getElementById(buttonId.replace("Btn", "Dropdown"));
+      dropdown.style.display = "none";
+    }
+
+    function addToCart(button) {
+      button.style.backgroundColor = "#474747";
+      button.innerHTML = "Added";
+      button.disabled = true;
+    }
+  </script>
+</body>
+</html>
